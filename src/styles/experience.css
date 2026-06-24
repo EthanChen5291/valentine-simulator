@@ -1,0 +1,498 @@
+/* ---------------------------------------------------------------------------
+   Styles for the Valentine experience, grouped by the screen they belong to.
+   Keyframes live up top; everything else follows the phase order of the app.
+--------------------------------------------------------------------------- */
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes zoomInStart {
+  0% { transform: scale(1); }
+  100% { transform: scale(12); }
+}
+
+/* --- Prestart: the click-to-begin gate (lets the browser unlock audio) --- */
+.prestart-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 300;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.prestart-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+/* --- Start: the title card with the floating start button --- */
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.start-screen-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.start-button-wrapper {
+  position: absolute;
+  top: calc(50% - 400px + 50px);
+  left: calc(50% - 400px - 50px);
+  transform: translate(-50%, -50%);
+  cursor: default;
+  animation: float 3s ease-in-out infinite;
+  transition: scale 0.3s ease-in;
+  pointer-events: none;
+}
+
+.start-button-wrapper.start-hovered {
+  scale: 1.1;
+}
+
+.start-button-wrapper.start-clicked {
+  animation: zoomInStart 0.45s cubic-bezier(0.2, 0, 1, 0.3) forwards;
+}
+
+.start-screen.start-screen-fading {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.start-button-img {
+  width: min(900px, 80vw);
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.start-button-hitbox {
+  position: absolute;
+  left: 25%;
+  top: 33.33%;
+  width: 50%;
+  height: 33.33%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* --- The stage: two stacked videos crossfade for seamless transitions --- */
+.valentine-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.background-video.video-cover {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.valentine-container.transitioning {
+  cursor: not-allowed;
+}
+
+.valentine-container.transitioning .hitbox,
+.valentine-container.transitioning .darkroom-button {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* --- Trials: the hand-drawn note slides up with yes / no hitboxes --- */
+@keyframes paperSlideUp {
+  from { transform: translateX(-50%) translateY(100%); }
+  to { transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes paperSlideDown {
+  from { transform: translateX(-50%) translateY(0); }
+  to { transform: translateX(-50%) translateY(100%); }
+}
+
+.paper-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  max-width: 950px;
+  z-index: 5;
+  animation: paperSlideUp 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.paper-container.paper-no-anim {
+  animation: none;
+  transform: translateX(-50%) translateY(0);
+}
+
+.paper-container.paper-exit {
+  animation: paperSlideDown 0.25s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.paper-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.hitbox {
+  position: absolute;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.hitbox-yes-1 {
+  left: 4.17%;
+  top: 80%;
+  width: 20.83%;
+  height: 20%;
+}
+
+.hitbox-yes-2 {
+  left: 4.17%;
+  top: 80%;
+  width: 20.83%;
+  height: 20%;
+}
+
+.hitbox-yes-3 {
+  left: 4.17%;
+  top: 83.3%;
+  width: 20.83%;
+  height: 16.7%;
+}
+
+.hitbox-no-1 {
+  left: 28%;
+  bottom: 0;
+  width: 20%;
+  height: 17.5%;
+}
+
+.hitbox-no-2 {
+  left: 47%;
+  top: 88%;
+  width: 7.5%;
+  height: 10%;
+}
+
+.hitbox-no-3 {
+  right: 2%;
+  top: 2%;
+  width: 10%;
+  height: 10.5%;
+}
+
+.paper-click-video-container {
+  position: absolute;
+  bottom: -40px;
+  left: 318px;
+  width: 234.6px;
+  height: 234.6px;
+  z-index: 10;
+}
+
+.paper-click-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Darkroom: typewriter prompt with the final yes / no --- */
+.darkroom-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.typewriter-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+.darkroom-buttons {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.darkroom-button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  letter-spacing: 0.2em;
+  transition: all 0.2s ease;
+  text-transform: lowercase;
+}
+
+.darkroom-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.darkroom-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Explosion: the "say no one too many times" easter egg --- */
+.explosion-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  z-index: 100;
+}
+
+.explosion-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.explosion-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.8rem;
+  color: #ff0000;
+  text-align: center;
+  z-index: 101;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  animation: fadeIn 1s ease;
+}
+
+.retry-button {
+  position: absolute;
+  bottom: 20%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #fff;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  letter-spacing: 0.3em;
+  z-index: 101;
+  transition: all 0.2s ease;
+  animation: fadeIn 0.5s ease;
+}
+
+.retry-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* --- Finale: the love letter, paged one panel at a time --- */
+.finished-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 50;
+  width: 80%;
+  max-width: 700px;
+  overflow: visible;
+}
+
+.finished-loading-dots {
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.3em;
+  animation: fadeIn 0.5s ease;
+}
+
+.finished-text {
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  color: #ff69b4;
+  text-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+  margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+.finished-panel-wrapper {
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.finished-panel {
+  position: absolute;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+}
+
+.finished-panel.panel-center {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.finished-panel.panel-left {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+.finished-panel.panel-right {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.finished-subtext {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  color: #fff;
+  opacity: 0.9;
+  line-height: 1.8;
+  margin-top: 1.5rem;
+}
+
+.finished-next-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  color: #ff69b4;
+  background: transparent;
+  border: 2px solid #ff69b4;
+  padding: 0.7rem 2.5rem;
+  cursor: pointer;
+  letter-spacing: 0.15em;
+  transition: all 0.25s ease;
+  border-radius: 4px;
+}
+
+.finished-next-btn:hover {
+  background: rgba(255, 105, 180, 0.15);
+  transform: scale(1.05);
+}
+
+/* --- Shared: the unobtrusive skip control during the opening --- */
+.skip-button {
+  position: fixed;
+  bottom: 12px;
+  right: 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 300;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  transition: color 0.2s ease;
+}
+
+.skip-button:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: 1.5rem;
+  }
+
+  .darkroom-button {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .finished-text {
+    font-size: 2rem;
+  }
+
+  .finished-subtext {
+    font-size: 1rem;
+  }
+
+  .finished-container {
+    width: 90%;
+  }
+
+  .explosion-text {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .paper-container {
+    width: 95%;
+  }
+}

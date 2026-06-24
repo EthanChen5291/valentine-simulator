@@ -1,8 +1,9 @@
 {
   "name": "valentine-gift",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "An interactive, hand-drawn animated Valentine's experience built with React.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,8 +12,6 @@
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",
-    "framer-motion": "^12.34.0",
-    "lucide-react": "^0.564.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
