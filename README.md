@@ -1,8 +1,6 @@
 # be my valentine
 
-A little hand-drawn, point-and-click thing that asks you to be its valentine and then absolutely refuses to take no for an answer.
-
-It plays like a tiny film you click through: a watercolor room, a note that slides up and pops the question, a cat that reacts to every hover, and music that shifts with the mood. Say no and it gets nervous. Keep saying no and it stops being polite about it.
+A little hand-drawn, point-and-click film that asks you to be its valentine and then refuses to take no for an answer.
 
 <p align="center">
   <img src="public/assets/scans/StartScreen.png" width="640" alt="A watercolor cafeteria with a hand-drawn 'Start' button floating in the doorway" />
@@ -10,19 +8,19 @@ It plays like a tiny film you click through: a watercolor room, a note that slid
 
 ## How it goes
 
-It hands you a card. There are two checkboxes. You are, in theory, free to pick either one.
+You hand your "special other" a card. What could their answer be?
 
 | The ask | The reaction |
 | --- | --- |
 | ![A character holds up a card reading 'you be my valentine' with yes and no checkboxes](public/assets/scans/Default.png) | ![The same character tearing up after the wrong checkbox](public/assets/scans/Scared.png) |
 
-Say no enough times and the lights cut out. The question gets typed at you one letter at a time, and you are politely informed that you have a choice. You do not, really.
+There are right answers. There are also incorrect answers. We ensure that your special other chooses correctly :)
 
 <p align="center">
   <img src="public/assets/scans/Dark.png" width="640" alt="A dark room with the question typed out and yes / no buttons" />
 </p>
 
-So eventually you cave. Everybody caves.
+And when they do, hip hip hurray!
 
 <p align="center">
   <img src="public/assets/scans/Celebration.png" width="640" alt="A cat throwing its arms up in a watercolor room covered in paintings and confetti" />
@@ -30,7 +28,7 @@ So eventually you cave. Everybody caves.
 
 ## What's in here
 
-**10 hand-animated scenes**, drawn, voiced, and scored from scratch — **40+ original assets** all told: 14 video clips, a dozen painted stills, and 16 audio tracks, each cut to its own moment so the room never feels the same way twice.
+**10 hand-animated scenes**, drawn, voiced, and scored from scratch — **40+ original assets** : 14 video clips, a dozen painted sprites, and 16 audio tracks synced to the scene.
 
 | | | | | |
 | --- | --- | --- | --- | --- |
@@ -38,15 +36,15 @@ So eventually you cave. Everybody caves.
 
 ## A few notes on how it's built
 
-A single-page React app — no backend, no UI framework, just the art, the audio, and a small amount of glue.
-
-The part I'm quietly proud of: it stitches those separate clips into one continuous scene. Two video layers crossfade so cuts never flash black, each clip's audio starts on the exact frame its video does so nothing drifts, and everything preloads up front so clicking feels instant. There's a gentle camera push-in on the bigger beats. Under all of it, the whole experience is just a handful of phases, each owning a screen and the one input that moves you to the next.
+A single-page React app — with no backend or UI framework. Just the art, the audio, and a small amount of friendship and happiness!
 
 ## Stack
 
 - React + Vite
-- canvas-confetti for the heart burst (you'll get there)
-- Plain CSS, original art, original audio
+- ProCreate + ProCreate Dreams (drawings + animation)
+- Dorico (audio)
+- CapCut (sound effects + editing)
+- CSS
 
 ## Running it
 
@@ -55,7 +53,7 @@ npm install
 npm run dev
 ```
 
-Sound on, and try saying no a few times.
+If you'd like to tune it to your own special other, edit the words in [src/config/script.js](src/config/script.js) (the question, the finale letter, and the headline), then drop your own art and music into [public/assets/](public/assets/) under the filenames listed in [src/config/assets.js](src/config/assets.js). Voila!
 
 ## Credits
 
