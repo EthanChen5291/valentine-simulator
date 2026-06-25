@@ -8,13 +8,13 @@ A little hand-drawn, point-and-click film that asks you to be its valentine and 
 
 ## How it goes
 
-You hand your "special other" a card. What could their answer be?
+After an eternity of expectation, you hand your special other a card. An important card. What could their answer be?
 
 | The ask | The reaction |
 | --- | --- |
 | ![A character holds up a card reading 'you be my valentine' with yes and no checkboxes](public/assets/scans/Default.png) | ![The same character tearing up after the wrong checkbox](public/assets/scans/Scared.png) |
 
-There are right answers. There are also incorrect answers. We ensure that your special other chooses correctly :)
+There are right answers. There are also incorrect answers. Our service ensures that they choose correctly :)
 
 <p align="center">
   <img src="public/assets/scans/Dark.png" width="640" alt="A dark room with the question typed out and yes / no buttons" />
