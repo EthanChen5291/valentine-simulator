@@ -20,7 +20,7 @@ There are right answers. There are also incorrect answers. We ensure that your s
   <img src="public/assets/scans/Dark.png" width="640" alt="A dark room with the question typed out and yes / no buttons" />
 </p>
 
-And when they do, hip hip hurray!
+And when they do...well, you're welcome!
 
 <p align="center">
   <img src="public/assets/scans/Celebration.png" width="640" alt="A cat throwing its arms up in a watercolor room covered in paintings and confetti" />
