@@ -20,12 +20,6 @@ There are right answers. There are also incorrect answers. We ensure that your s
   <img src="public/assets/scans/Dark.png" width="640" alt="A dark room with the question typed out and yes / no buttons" />
 </p>
 
-And when they do...well, you're welcome!
-
-<p align="center">
-  <img src="public/assets/scans/Celebration.png" width="640" alt="A cat throwing its arms up in a watercolor room covered in paintings and confetti" />
-</p>
-
 ## What's in here
 
 **10 hand-animated scenes**, drawn, voiced, and scored from scratch — **40+ original assets** : 14 video clips, a dozen painted sprites, and 16 audio tracks synced to the scene.
