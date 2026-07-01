@@ -2,37 +2,28 @@
 
 A little hand-drawn, point-and-click film that asks you to be its valentine and then refuses to take no for an answer.
 
-<p align="center">
-  <img src="public/assets/scans/StartScreen.png" width="640" alt="A watercolor cafeteria with a hand-drawn 'Start' button floating in the doorway" />
-</p>
+So you want to hand your "special other" a card. What could their answer be?
 
-## How it goes
-
-You hand your "special other" a card. What could their answer be?
-
-| The ask | The reaction |
+| The question | The wrong answer |
 | --- | --- |
-| ![A character holds up a card reading 'you be my valentine' with yes and no checkboxes](public/assets/scans/Default.png) | ![The same character tearing up after the wrong checkbox](public/assets/scans/Scared.png) |
+| ![the card, held out, waiting for a yes](public/assets/scans/Default.png) | ![oh. oh no.](public/assets/scans/Scared.png) |
 
 There are right answers. There are also incorrect answers. We ensure that your special other chooses correctly :)
 
-<p align="center">
-  <img src="public/assets/scans/Dark.png" width="640" alt="A dark room with the question typed out and yes / no buttons" />
-</p>
-
-And when they do, hip hip hurray!
+And when they do, cheers!
 
 <p align="center">
-  <img src="public/assets/scans/Celebration.png" width="640" alt="A cat throwing its arms up in a watercolor room covered in paintings and confetti" />
+  <img src="public/assets/scans/Celebration.png" width="640" alt="arms up, confetti everywhere" />
 </p>
 
 ## What's in here
 
 **10 hand-animated scenes**, drawn, voiced, and scored from scratch — **40+ original assets** : 14 video clips, a dozen painted sprites, and 16 audio tracks synced to the scene.
 
-| | | | | |
-| --- | --- | --- | --- | --- |
-| ![](public/assets/scans/gallery-01.png) | ![](public/assets/scans/gallery-02.png) | ![](public/assets/scans/gallery-03.png) | ![](public/assets/scans/gallery-04.png) | ![](public/assets/scans/gallery-05.png) |
+| | | |
+| --- | --- | --- |
+| ![](public/assets/scans/gallery-01.png) | ![](public/assets/scans/gallery-02.png) | ![](public/assets/scans/gallery-03.png) |
+| ![](public/assets/scans/gallery-04.png) | ![](public/assets/scans/gallery-05.png) | ![A dark room with the question typed out and yes / no buttons](public/assets/scans/Dark.png) |
 
 ## A few notes on how it's built
 
