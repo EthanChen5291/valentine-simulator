@@ -8,7 +8,7 @@ So you want to hand your "special other" a card. What could their answer be?
 | --- | --- |
 | ![the card, held out, waiting for a yes](public/assets/scans/Default.png) | ![oh. oh no.](public/assets/scans/Scared.png) |
 
-There are right answers. There are also incorrect answers. We ensure that your special other chooses correctly :)
+There are right answers. There are also incorrect answers. Our service ensures that they choose correctly :)
 
 And when they do, cheers!
 
@@ -32,9 +32,9 @@ A single-page React app — with no backend or UI framework. Just the art, the a
 ## Stack
 
 - React + Vite
-- ProCreate + ProCreate Dreams (drawings + animation)
-- Dorico (audio)
-- CapCut (sound effects + editing)
+- ProCreate + ProCreate Dreams
+- Dorico
+- DaVinci Resolve
 - CSS
 
 ## Running it
@@ -44,7 +44,7 @@ npm install
 npm run dev
 ```
 
-If you'd like to tune it to your own special other, edit the words in [src/config/script.js](src/config/script.js) (the question, the finale letter, and the headline), then drop your own art and music into [public/assets/](public/assets/) under the filenames listed in [src/config/assets.js](src/config/assets.js). Voila!
+If you'd like to tune it to your own special other, edit the words in [src/config/script.js](src/config/script.js), then drop your own art and music into [public/assets/](public/assets/) under the filenames listed in [src/config/assets.js](src/config/assets.js). Enjoy!
 
 ## Credits
 
